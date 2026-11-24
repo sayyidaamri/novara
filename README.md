@@ -1,8 +1,8 @@
-# NOVARA — clone of lusion.co (native HTML, no hosting needed)
+# NOVARA — native HTML site (no hosting needed)
 
 ![NOVARA homepage preview](docs/preview/homepage.gif)
 
-Rebuild of lusion.co's look and behaviour for a fictional studio, **NOVARA**. All copy, logo, project
+An original site for a fictional studio, **NOVARA**. All copy, logo, project
 names, client names, shaders and code are original. Photos come from Unsplash, video, music and sound
 effects from Mixkit, and everything is stored locally.
 
@@ -72,21 +72,11 @@ the Lisbon address, social links (point to generic domains), the "Labs" link (ex
 "Launch project" / link buttons (dead links on purpose), all 19 projects, 7 team members, 16 client
 names and the awards list (all fictional). Photos and videos are stock media.
 
-## What differs from the reference (and why)
+## Technical notes
 
-- **Font**: Aeonik is commercial, so it is replaced by Inter Tight (closest free match). IBM Plex Mono is the same as the reference.
-- **3D content**: the reference uses proprietary models and textures (astronaut, tunnels, stickers, point-cloud
-  team faces, depth-map project images). These are replaced by my own procedural three.js/GLSL scenes,
-  my own SVG stickers and CSS-treated photos. The motion, timing and layout follow the reference, but the
-  artwork itself is different.
+- **Font**: Inter Tight (free) for UI text, with IBM Plex Mono for monospaced labels.
+- **3D content**: procedural three.js/GLSL scenes, original SVG stickers and CSS-treated photos.
 - WebGL cannot read local images or video when a page is opened from `file://`, so photos and videos stay as
   DOM elements (with CSS parallax) instead of being drawn on the GPU.
-- The reference uses a virtual (canvas) scroll. Here it is a native page with custom smooth wheel scrolling
-  and sticky sections, so keyboard, scrollbar and touch work normally.
-
-## Research & verification
-
-- `docs/RESEARCH.md`: findings (tokens, sizes, timelines, interactions).
-- `docs/compare/`: side-by-side images, reference on the left and this build on the right.
-- `clone-kit/`: Playwright probes. `node audit.mjs --config clone.config.audit.json` reports 0 JS errors,
-  0 broken links/images and no horizontal overflow on all 22 pages at 1440 and 390 px.
+- Native page scroll with custom smooth wheel scrolling and sticky sections, so keyboard, scrollbar and touch
+  work normally.
